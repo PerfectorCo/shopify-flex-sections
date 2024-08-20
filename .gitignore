@@ -1,0 +1,23 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore
+.github/
+assets/
+config/
+layout/
+locales/
+sections/*
+!sections/custom-section.liquid
+snippets/*
+!snippets/icon.liquid
+templates/
+LICENSE.md
+README.md
