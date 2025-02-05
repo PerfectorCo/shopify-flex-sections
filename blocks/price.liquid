@@ -1,6 +1,13 @@
+{% stylesheet %}
+  .price-block {
+    display: flex;
+    gap: 5px;
+    width: fit-content;
+  }
+{% endstylesheet %}
+
 <div class="price-block {{ block.settings | class_list }}" {{ block.shopify_attributes }}>
   {%- liquid
-    assign target = product
     if block.settings.product != blank
       assign target = block.settings.product.selected_or_first_available_variant
     endif
@@ -48,6 +55,13 @@
       "label": "Spacing"
     }
   ],
-  "presets": [{ "name": "Product (price)" }]
+  "presets": [
+    {
+      "name": "Product (price)",
+      "settings": {
+        "product": "{{ closest.product }}"
+      }
+    }
+  ]
 }
 {% endschema %}
